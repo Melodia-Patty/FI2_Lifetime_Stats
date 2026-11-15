@@ -1300,7 +1300,7 @@ body::before{opacity:.08}
 <div class="hm-row"><dt>Cav kills</dt><dd>Kills made while mounted.</dd></div>
 <div class="hm-row"><dt>Difficulty score</dt><dd>The extra score earned from harder polls &amp; settings in game (especially difficulty, nonstop, one-life and hardbots, but also a bit for e.g. cavalry enabled).</dd></div>
 <div class="hm-row"><dt>Favourite heroes and units</dt><dd>Counted at spawn or when using wardrobe. Refreshing the same troop (e.g. as an engineer rebuying a turret) doesn’t add again.</dd></div>
-<div class="hm-row"><dt>Most played maps</dt><dd>A map counts after you get 20 kills on it (so the statistics won't be unnecessarily skewed by casually browsing maps etc).</dd></div>
+<div class="hm-row"><dt>Most played maps</dt><dd>A map counts only after you get 20 kills on it.</dd></div>
 <div class="hm-row"><dt>As defenders / Against invaders</dt><dd>Various stats by the defender faction you played and the invader faction you faced. Custom scenarios and invasions are all grouped as “Custom Defenders” and “Custom Invasions”.</dd></div>
 </dl>
 </section>
@@ -1444,11 +1444,10 @@ function compare(a,b){
   }
   return a.name.localeCompare(b.name,undefined,{sensitivity:'base'});
 }
-function renderTotals(rows,columns,totalPlayerCount){
+function renderTotals(rows,columns,label){
   if(!rows.length){$('foot').innerHTML='';return;}
   const sums = key => rows.reduce((total,row) => total + (Number(row[key]) || 0),0);
-  const playerCount = Number.isFinite(totalPlayerCount) ? totalPlayerCount : rows.length;
-  $('foot').innerHTML = '<tr><td></td><td>In total · ' + fmt(playerCount) + ' ' + plural(playerCount,'player','players') + '</td>' +
+  $('foot').innerHTML = '<tr><td></td><td title="' + esc(label) + '">' + esc(label) + '</td>' +
     columns.map(([key]) => '<td class="total-value col-' + key + (key === sortKey ? ' s' : '') + '" title="' + fmt(sums(key)) + '">' + fmtCompact(sums(key)) + '</td>').join('') + '</tr>';
 }
 const measureContext = document.createElement('canvas').getContext('2d');
@@ -1531,7 +1530,12 @@ function render(){
   const visible = shown.slice(page * effectivePageSize,page * effectivePageSize + effectivePageSize);
 
   syncColumnWidths(columns,shown,shown);
-  renderTotals(shown.length > 1 ? visible : [],columns,visible.length);
+  const rangeStart = page * effectivePageSize + 1;
+  const rangeEnd = rangeStart + visible.length - 1;
+  const totalsLabel = visible.length === shown.length
+    ? 'In total · ' + fmt(visible.length) + ' ' + plural(visible.length,'player','players')
+    : 'Players ' + fmt(rangeStart) + '–' + fmt(rangeEnd) + ' of ' + fmt(shown.length);
+  renderTotals(shown.length > 1 ? visible : [],columns,totalsLabel);
   $('head').innerHTML = '<tr><th scope="col">#</th><th scope="col" tabindex="0" data-key="name" class="player-sort ' + (sortKey === 'name' ? (ascending ? 'on asc' : 'on') : '') + '"><span>Player</span></th>' +
     columns.map(([key,label,description]) => '<th scope="col" tabindex="0" data-key="' + key + '" data-tip="' + esc(description) + '" class="col-' + key + ' ' + (key === sortKey ? (ascending ? 'on asc' : 'on') : '') + '"><span>' + esc(label) + '</span></th>').join('') + '</tr>';
 
