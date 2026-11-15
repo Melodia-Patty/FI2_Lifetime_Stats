@@ -1,15 +1,20 @@
 {
- "updated": 1794772885721,
+ "updated": 1794775381152,
  "quests": [
   {
    "id": 24,
    "name": "Kill bots in nonstop mode",
-   "completions": 24
+   "completions": 25
   },
   {
    "id": 12,
    "name": "Top5 points",
-   "completions": 2
+   "completions": 3
+  },
+  {
+   "id": 1,
+   "name": "Kill bots",
+   "completions": 1
   },
   {
    "id": 8,
@@ -17,9 +22,9 @@
    "completions": 1
   },
   {
-   "id": 1,
-   "name": "Kill bots",
-   "completions": 0
+   "id": 13,
+   "name": "Slay bosses",
+   "completions": 1
   },
   {
    "id": 2,
@@ -64,11 +69,6 @@
   {
    "id": 11,
    "name": "Win games",
-   "completions": 0
-  },
-  {
-   "id": 13,
-   "name": "Slay bosses",
    "completions": 0
   },
   {
