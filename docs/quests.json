@@ -1,5 +1,5 @@
 {
- "updated": 1794866480560,
+ "updated": 1794870087174,
  "quests": [
   {
    "id": 24,
@@ -22,6 +22,11 @@
    "completions": 1
   },
   {
+   "id": 3,
+   "name": "Hit headshots",
+   "completions": 1
+  },
+  {
    "id": 8,
    "name": "Kills without dying",
    "completions": 1
@@ -30,11 +35,6 @@
    "id": 13,
    "name": "Slay bosses",
    "completions": 1
-  },
-  {
-   "id": 3,
-   "name": "Hit headshots",
-   "completions": 0
   },
   {
    "id": 4,
