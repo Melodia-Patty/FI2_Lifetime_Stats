@@ -1147,8 +1147,8 @@ body::before{opacity:.08}
 #tip.rank .rk-dist.mine{color:#fff0b8;background:linear-gradient(90deg,rgba(216,185,111,.17),rgba(216,185,111,.055))}
 #tip.rank .rk-dist.mine .rk-bar u{background:#d8b96f}
 #tip.rank .rk-dist.mine .rk-pct{text-decoration:none}
-.sub-row{display:block;margin-top:11px}
-.sub-row .sub{display:block;margin:0}.sub-end{white-space:nowrap}.sub-end .help-btn{vertical-align:baseline;margin-block:-4px}
+.sub-row{display:flex;flex-wrap:nowrap;align-items:center;align-items:last baseline;margin-top:11px}
+.sub-row .sub{display:block;flex:0 1 auto;min-width:0;margin:0}
 .help-btn{display:inline-flex;flex:0 0 auto;margin-left:8px;align-items:center;justify-content:center;width:18px;height:18px;padding:0;font:700 10px/1 var(--display);color:rgba(255,248,226,.42);background:rgba(255,248,226,.04);border:1px solid rgba(255,248,226,.16);border-radius:50%;cursor:pointer;transition:background .16s,border-color .16s,color .16s,box-shadow .16s}
 .help-btn:hover{background:rgba(255,248,226,.12);border-color:rgba(255,248,226,.45);color:rgba(255,250,236,.95);box-shadow:0 0 0 3px rgba(255,248,226,.06)}
 .hm{position:fixed;inset:0;z-index:60;display:flex;align-items:center;justify-content:center;padding:3vh 16px;background:rgba(5,6,4,.8);backdrop-filter:blur(2px);opacity:0;visibility:hidden;transition:opacity .22s ease,visibility .22s ease}
@@ -1196,7 +1196,8 @@ body::before{opacity:.08}
   <div class="brand">
     <h1>Full Invasion <span>2</span></h1>
     <div class="sub-row">
-      <p class="sub"><span id="sub-text">Lifetime stats (starting from 15 November 2026) - Gondolin </span><span class="sub-end">Osiris<button type="button" class="help-btn" id="help-btn" aria-label="About the Stats" aria-haspopup="dialog">?</button></span></p>
+      <p class="sub">Lifetime stats (starting from 15 November 2026) - Gondolin Osiris</p>
+      <button type="button" class="help-btn" id="help-btn" aria-label="About the Stats" aria-haspopup="dialog">?</button>
     </div>
     <div class="brand-meta"><span class="credit">By Melodia-Patty</span><span id="meta">Last update: -</span></div>
   </div>
@@ -1817,11 +1818,20 @@ function factionTypes(player,mode){
   return Object.entries(source).filter(([id,stat]) => Number(stat.kills) > 0 || Number(stat.waves) > 0).length;
 }
 const ACTIVITY_KEYS = ['quests','commands','animations','boxes','slain'];
+function slainValue(player,mode){
+  const pvpKills = Number(player.slain) || 0;
+  const traitorKills = Number(player.slainTraitor) || 0;
+  const antiKills = Number(player.slainAnti) || 0;
+  if(mode === 'pvp') return pvpKills;
+  if(mode === 'traitor') return traitorKills;
+  if(mode === 'anti') return antiKills;
+  return pvpKills + traitorKills + antiKills;
+}
 function rankValue(player,key){
   const parts = key.split(':');
   if(parts[0] === 'fac') return Number((((player.fac && player.fac[parts[1]]) || {})[parts[2]] || {})[parts[3]]) || 0;
   if(parts[0] === 'facTypes') return factionTypes(player,parts[1]);
-  if(key === 'activityTotal') return ACTIVITY_KEYS.reduce((total,name) => total + (Number(player[name]) || 0),0);
+  if(key === 'activityTotal') return ACTIVITY_KEYS.reduce((total,name) => total + (name === 'slain' ? slainValue(player,'') : (Number(player[name]) || 0)),0);
   return Number(player[key]) || 0;
 }
 const shareText = (value,total) => total > 0 && value > 0 ? Math.min(100,value / total * 100).toFixed(1) + '%' : '';
@@ -1885,9 +1895,9 @@ function rankedPlayersFor(key){
     }
   }else if(key === 'deaths'){
     list = panel.players.map(player => ({id:player.id,name:player.name,value:Number(player['runs' + deathGoal]) || 0})).filter(item => item.value > 0);
-  }else if(key === 'slain' && slainMode){
-    const slainKey = slainMode === 'traitor' ? 'slainTraitor' : 'slainAnti';
-    list = panel.players.map(player => ({id:player.id,name:player.name,value:Number(player[slainKey]) || 0})).filter(item => item.value > 0);
+  }else if(key === 'slain'){
+    list = panel.players.map(player => ({id:player.id,name:player.name,value:slainValue(player,slainMode)}));
+    if(slainMode === 'traitor' || slainMode === 'anti') list = list.filter(item => item.value > 0);
   }else if(key === 'score' && scoreMode === 'difficulty'){
     list = panel.players.map(player => ({id:player.id,name:player.name,value:Number(player.diffscore) || 0})).filter(item => item.value > 0);
   }else if(key === 'kills' && killsGroup){
@@ -1989,7 +1999,7 @@ function renderPlayer(keepFocus){
   const activityTotal = rankValue(player,'activityTotal');
   const sectionTitle = (title,key,rankLabel,note,amount) => '<h3>' + (amount > 0 ? rankTrigger(key,title,rankLabel,note) : esc(title)) + '</h3>';
   const countLine = (key,label,rankKey=key) => line(label,value(key),rankKey);
-  const activity = countLine('quests','Quests completed') + countLine('joined','Joined the server','joined') + countLine('commands','Commands used') + countLine('animations','Animations used') + countLine('boxes','Lootboxes opened') + countLine('slain','Players slain') + ['anvils','refills','wardrobes'].map(key => countLine(key,{anvils:'Anvils used',refills:'Refills used',wardrobes:'Wardrobes used'}[key])).join('');
+  const activity = countLine('quests','Quests completed') + countLine('joined','Joined the server','joined') + countLine('commands','Commands used') + countLine('animations','Animations used') + countLine('boxes','Lootboxes opened') + line('Players slain',slainValue(player,''),'slain') + ['anvils','refills','wardrobes'].map(key => countLine(key,{anvils:'Anvils used',refills:'Refills used',wardrobes:'Wardrobes used'}[key])).join('');
   const fav = player.fav || {};
   const isMelodiaPatty = String(player.name || '').trim().toLowerCase() === 'melodia-patty';
   const rangeButtons = PANEL_RANGES.map(([key,label]) => '<button type="button" class="pm-range-btn' + (key === panelRange ? ' active' : '') + '" data-range="' + key + '" aria-pressed="' + (key === panelRange) + '">' + label + '</button>').join('');
@@ -2083,7 +2093,7 @@ function factionSpreadHtml(key){
 }
 function rankNote(key){
   if(key === 'deaths') return 'No death run - ' + fmt(deathGoal) + ' kills in a row without dying';
-  if(key === 'slain') return slainMode === 'traitor' ? 'Defender players slain as a traitor' : slainMode === 'anti' ? 'Traitors slain by defenders - as defender' : 'Kills during PVP after parties or mini-events';
+  if(key === 'slain') return slainMode === 'traitor' ? 'Defender players slain as a traitor' : slainMode === 'anti' ? 'Traitors slain by defenders - as defender' : slainMode === 'pvp' ? 'Kills during PVP after parties or mini-events' : 'All players slain - PVP, traitor and anti kills combined';
   if(key === 'score' && scoreMode === 'difficulty') return 'Extra points earned from kills on harder settings';
   if(key === 'score') return 'Score from kills, quests, bosses and wins';
   if(key === 'kills' && killsGroup) return killsGroupNote();
@@ -2097,7 +2107,7 @@ function rankModeConfig(key){
   if(key === 'deaths') return {options:DEATH_GOALS.map(goal => [goal,String(goal)]),active:deathGoal};
   if(key === 'kills') return {options:[['all','All'],['melee','Melee'],['ranged','Ranged'],['cav','Cav']],active:killsGroup || 'all'};
   if(key === 'score') return {options:[['all','Score'],['difficulty','Difficulty']],active:scoreMode || 'all'};
-  if(key === 'slain') return {options:[['all','PVP'],['traitor','Traitor'],['anti','Anti']],active:slainMode || 'all'};
+  if(key === 'slain') return {options:[['all','All'],['pvp','PVP'],['traitor','Traitor'],['anti','Anti']],active:slainMode || 'all'};
   return null;
 }
 function rankTipHtml(state){
@@ -2367,7 +2377,7 @@ Promise.all([
   if(!loaded || !Array.isArray(loaded.players)) throw new Error('Invalid stats.json format');
   current = loaded;
   const reportedSince = timestampMs(loaded.since);
-  if(reportedSince) $('sub-text').textContent = 'Lifetime stats (starting from ' + longDayStamp(reportedSince) + ') - Gondolin ';
+  if(reportedSince) document.querySelector('.sub').textContent = 'Lifetime stats (starting from ' + longDayStamp(reportedSince) + ') - Gondolin Osiris';
   Object.entries({today,week,month,quarter,half,year}).forEach(([name,baseline]) => {
     if(baseline && Array.isArray(baseline.players)) baselines[name] = baseline;
   });
