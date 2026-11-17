@@ -1,5 +1,5 @@
 {
- "updated": 1794931301247,
+ "updated": 1794934900080,
  "quests": [
   {
    "id": 24,
@@ -22,13 +22,13 @@
    "completions": 2
   },
   {
-   "id": 1,
-   "name": "Kill bots",
-   "completions": 1
-  },
-  {
    "id": 8,
    "name": "Kills without dying",
+   "completions": 2
+  },
+  {
+   "id": 1,
+   "name": "Kill bots",
    "completions": 1
   },
   {
