@@ -1,6 +1,6 @@
 const SftpClient = require('ssh2-sftp-client');
 const fs = require('fs');
-const NAMES = {'1354331': 'Melodia-Patty', '2829101': 'Maykelus', '2863951': 'Aboba', '5357808': 'saycre', '1400203': 'HorrorVII', '4233623': 'coole'};
+const NAMES = {'1354331': 'Melodia-Patty', '2829101': 'Maykelus', '2863951': 'Aboba', '5357808': 'saycre', '4233623': 'coole'};
 const IGNORED_PLAYERS = new Set(['3398668']);
 const NAME_FIELDS = [5003];
 const WEAPON_KILLS_BASE = 7000;
