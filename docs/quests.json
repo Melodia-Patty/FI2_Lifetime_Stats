@@ -1,5 +1,5 @@
 {
- "updated": 1794916893624,
+ "updated": 1794920486641,
  "quests": [
   {
    "id": 24,
@@ -7,14 +7,14 @@
    "completions": 25
   },
   {
-   "id": 12,
-   "name": "Top5 points",
+   "id": 2,
+   "name": "Kill bots as Recruit/Soldier",
    "completions": 3
   },
   {
-   "id": 2,
-   "name": "Kill bots as Recruit/Soldier",
-   "completions": 2
+   "id": 12,
+   "name": "Top5 points",
+   "completions": 3
   },
   {
    "id": 3,
