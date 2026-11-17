@@ -1,5 +1,5 @@
 {
- "updated": 1794942093547,
+ "updated": 1794945701990,
  "quests": [
   {
    "id": 24,
@@ -24,6 +24,11 @@
   {
    "id": 3,
    "name": "Hit headshots",
+   "completions": 2
+  },
+  {
+   "id": 10,
+   "name": "Beat waves",
    "completions": 2
   },
   {
@@ -59,11 +64,6 @@
   {
    "id": 9,
    "name": "Kills with max 1 death",
-   "completions": 0
-  },
-  {
-   "id": 10,
-   "name": "Beat waves",
    "completions": 0
   },
   {
