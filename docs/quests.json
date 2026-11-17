@@ -1,5 +1,5 @@
 {
- "updated": 1794938487256,
+ "updated": 1794942093547,
  "quests": [
   {
    "id": 24,
@@ -12,6 +12,11 @@
    "completions": 4
   },
   {
+   "id": 8,
+   "name": "Kills without dying",
+   "completions": 4
+  },
+  {
    "id": 12,
    "name": "Top5 points",
    "completions": 3
@@ -19,11 +24,6 @@
   {
    "id": 3,
    "name": "Hit headshots",
-   "completions": 2
-  },
-  {
-   "id": 8,
-   "name": "Kills without dying",
    "completions": 2
   },
   {
