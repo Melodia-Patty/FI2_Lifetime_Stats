@@ -1,5 +1,5 @@
 {
- "updated": 1794963681778,
+ "updated": 1794967311248,
  "quests": [
   {
    "id": 24,
@@ -14,7 +14,7 @@
   {
    "id": 3,
    "name": "Hit headshots",
-   "completions": 5
+   "completions": 6
   },
   {
    "id": 8,
@@ -44,6 +44,11 @@
   {
    "id": 17,
    "name": "Buff allies as a wizard",
+   "completions": 1
+  },
+  {
+   "id": 20,
+   "name": "Beat different invasions",
    "completions": 1
   },
   {
@@ -99,11 +104,6 @@
   {
    "id": 19,
    "name": "Beat a custom invasion",
-   "completions": 0
-  },
-  {
-   "id": 20,
-   "name": "Beat different invasions",
    "completions": 0
   },
   {
