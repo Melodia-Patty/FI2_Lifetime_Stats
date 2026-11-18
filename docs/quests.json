@@ -1,5 +1,5 @@
 {
- "updated": 1794956496689,
+ "updated": 1794960096304,
  "quests": [
   {
    "id": 24,
@@ -17,6 +17,11 @@
    "completions": 4
   },
   {
+   "id": 3,
+   "name": "Hit headshots",
+   "completions": 3
+  },
+  {
    "id": 10,
    "name": "Beat waves",
    "completions": 3
@@ -27,11 +32,6 @@
    "completions": 3
   },
   {
-   "id": 3,
-   "name": "Hit headshots",
-   "completions": 2
-  },
-  {
    "id": 1,
    "name": "Kill bots",
    "completions": 1
@@ -39,6 +39,11 @@
   {
    "id": 13,
    "name": "Slay bosses",
+   "completions": 1
+  },
+  {
+   "id": 17,
+   "name": "Buff allies as a wizard",
    "completions": 1
   },
   {
@@ -84,11 +89,6 @@
   {
    "id": 16,
    "name": "Use refills / wardrobes",
-   "completions": 0
-  },
-  {
-   "id": 17,
-   "name": "Buff allies as a wizard",
    "completions": 0
   },
   {
