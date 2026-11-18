@@ -1147,9 +1147,8 @@ body::before{opacity:.08}
 #tip.rank .rk-dist.mine{color:#fff0b8;background:linear-gradient(90deg,rgba(216,185,111,.17),rgba(216,185,111,.055))}
 #tip.rank .rk-dist.mine .rk-bar u{background:#d8b96f}
 #tip.rank .rk-dist.mine .rk-pct{text-decoration:none}
-.sub-row{display:flex;flex-wrap:nowrap;align-items:center;align-items:last baseline;margin-top:11px}
-.sub-row .sub{display:block;flex:0 1 auto;min-width:0;margin:0}
-.help-btn{display:inline-flex;flex:0 0 auto;margin-left:8px;align-items:center;justify-content:center;width:18px;height:18px;padding:0;font:700 10px/1 var(--display);color:rgba(255,248,226,.42);background:rgba(255,248,226,.04);border:1px solid rgba(255,248,226,.16);border-radius:50%;cursor:pointer;transition:background .16s,border-color .16s,color .16s,box-shadow .16s}
+.sub-end{white-space:nowrap}
+.help-btn{display:inline-flex;flex:0 0 auto;margin-left:8px;vertical-align:middle;position:relative;top:-1px;align-items:center;justify-content:center;width:18px;height:18px;padding:0;font:700 10px/1 var(--display);color:rgba(255,248,226,.42);background:rgba(255,248,226,.04);border:1px solid rgba(255,248,226,.16);border-radius:50%;cursor:pointer;transition:background .16s,border-color .16s,color .16s,box-shadow .16s}
 .help-btn:hover{background:rgba(255,248,226,.12);border-color:rgba(255,248,226,.45);color:rgba(255,250,236,.95);box-shadow:0 0 0 3px rgba(255,248,226,.06)}
 .hm{position:fixed;inset:0;z-index:60;display:flex;align-items:center;justify-content:center;padding:3vh 16px;background:rgba(5,6,4,.8);backdrop-filter:blur(2px);opacity:0;visibility:hidden;transition:opacity .22s ease,visibility .22s ease}
 .hm.open{opacity:1;visibility:visible}
@@ -1195,10 +1194,7 @@ body::before{opacity:.08}
 <header>
   <div class="brand">
     <h1>Full Invasion <span>2</span></h1>
-    <div class="sub-row">
-      <p class="sub">Lifetime stats (starting from 15 November 2026) - Gondolin Osiris</p>
-      <button type="button" class="help-btn" id="help-btn" aria-label="About the Stats" aria-haspopup="dialog">?</button>
-    </div>
+    <p class="sub"><span id="sub-text">Lifetime stats (starting from 15 November 2026) - Gondolin</span> <span class="sub-end">Osiris<button type="button" class="help-btn" id="help-btn" aria-label="About the Stats" aria-haspopup="dialog">?</button></span></p>
     <div class="brand-meta"><span class="credit">By Melodia-Patty</span><span id="meta">Last update: -</span></div>
   </div>
   <nav class="links" aria-label="Links">
@@ -1256,7 +1252,7 @@ body::before{opacity:.08}
 <div class="hm-row"><dt>Deaths</dt><dd>Each death as long as the invasion is spawning. A death caused by disconnecting is not counted. Deaths from friendly fire, PvP and certain special events are not counted either.</dd></div>
 <div class="hm-row"><dt>Top Points</dt><dd>Points for the top 5 players in the ranking shown after every boss wave: 5 points for 1st place, 4 for 2nd and so on. Needs at least 5 players online. With 20+ players online the points are doubled, with 40+ they are tripled.</dd></div>
 <div class="hm-row"><dt>Quests</dt><dd>Weekly quests you completed. Check your progress in game with <b>/quests</b>. Each completed quest also gives some gold between waves until the weekly reset. 11-14 quests are active each week, drawn from 25 types. Targets are randomized every week and everything resets on Monday at 00:00 UTC.</dd></div>
-<div class="hm-row"><dt>Waves</dt><dd>Number of waves you took part in. It doesn’t matter whether you died or how many bots you killed - you left your mark and that counts.</dd></div>
+<div class="hm-row"><dt>Waves</dt><dd>Number of waves you took part in. It doesn’t matter whether you died or how many bots you killed - you left your mark and that counts. Remember that short games reduce the number of waves per game.</dd></div>
 <div class="hm-row"><dt>Wins</dt><dd>Games won - the number of dev waves you survived to the end.</dd></div>
 <div class="hm-row"><dt>Bosses</dt><dd>Only the player who dealt the most damage gets the credit, not the one who lands the last hit.</dd></div>
 <div class="hm-row"><dt>End bosses</dt><dd>Same rule, for end-game bosses (level 70+).</dd></div>
@@ -2377,7 +2373,7 @@ Promise.all([
   if(!loaded || !Array.isArray(loaded.players)) throw new Error('Invalid stats.json format');
   current = loaded;
   const reportedSince = timestampMs(loaded.since);
-  if(reportedSince) document.querySelector('.sub').textContent = 'Lifetime stats (starting from ' + longDayStamp(reportedSince) + ') - Gondolin Osiris';
+  if(reportedSince) document.getElementById('sub-text').textContent = 'Lifetime stats (starting from ' + longDayStamp(reportedSince) + ') - Gondolin';
   Object.entries({today,week,month,quarter,half,year}).forEach(([name,baseline]) => {
     if(baseline && Array.isArray(baseline.players)) baselines[name] = baseline;
   });
