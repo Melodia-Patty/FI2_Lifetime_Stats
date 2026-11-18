@@ -1,5 +1,5 @@
 {
- "updated": 1795021293035,
+ "updated": 1795024907519,
  "quests": [
   {
    "id": 24,
@@ -14,7 +14,7 @@
   {
    "id": 3,
    "name": "Hit headshots",
-   "completions": 7
+   "completions": 8
   },
   {
    "id": 8,
@@ -24,7 +24,7 @@
   {
    "id": 10,
    "name": "Beat waves",
-   "completions": 3
+   "completions": 4
   },
   {
    "id": 12,
