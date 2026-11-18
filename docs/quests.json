@@ -1,5 +1,5 @@
 {
- "updated": 1795028485886,
+ "updated": 1795032085161,
  "quests": [
   {
    "id": 24,
@@ -19,7 +19,7 @@
   {
    "id": 8,
    "name": "Kills without dying",
-   "completions": 5
+   "completions": 6
   },
   {
    "id": 10,
