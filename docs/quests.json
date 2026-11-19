@@ -1,5 +1,5 @@
 {
- "updated": 1795114894109,
+ "updated": 1795118523595,
  "quests": [
   {
    "id": 24,
@@ -9,7 +9,7 @@
   {
    "id": 2,
    "name": "Kill bots as Recruit/Soldier",
-   "completions": 16
+   "completions": 17
   },
   {
    "id": 19,
@@ -24,6 +24,11 @@
   {
    "id": 10,
    "name": "Beat waves",
+   "completions": 9
+  },
+  {
+   "id": 8,
+   "name": "Kills without dying",
    "completions": 8
   },
   {
@@ -32,14 +37,9 @@
    "completions": 7
   },
   {
-   "id": 8,
-   "name": "Kills without dying",
-   "completions": 7
-  },
-  {
    "id": 20,
    "name": "Beat different invasions",
-   "completions": 5
+   "completions": 7
   },
   {
    "id": 12,
