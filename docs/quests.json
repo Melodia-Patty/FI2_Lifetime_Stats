@@ -1,5 +1,5 @@
 {
- "updated": 1795125682411,
+ "updated": 1795129286223,
  "quests": [
   {
    "id": 24,
@@ -19,17 +19,17 @@
   {
    "id": 3,
    "name": "Hit headshots",
+   "completions": 11
+  },
+  {
+   "id": 1,
+   "name": "Kill bots",
    "completions": 9
   },
   {
    "id": 10,
    "name": "Beat waves",
    "completions": 9
-  },
-  {
-   "id": 1,
-   "name": "Kill bots",
-   "completions": 8
   },
   {
    "id": 8,
