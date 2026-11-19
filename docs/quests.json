@@ -1,5 +1,5 @@
 {
- "updated": 1795107685798,
+ "updated": 1795111282102,
  "quests": [
   {
    "id": 24,
@@ -9,12 +9,17 @@
   {
    "id": 2,
    "name": "Kill bots as Recruit/Soldier",
-   "completions": 14
+   "completions": 15
+  },
+  {
+   "id": 19,
+   "name": "Beat a custom invasion",
+   "completions": 13
   },
   {
    "id": 3,
    "name": "Hit headshots",
-   "completions": 8
+   "completions": 9
   },
   {
    "id": 10,
@@ -29,7 +34,12 @@
   {
    "id": 1,
    "name": "Kill bots",
-   "completions": 3
+   "completions": 5
+  },
+  {
+   "id": 20,
+   "name": "Beat different invasions",
+   "completions": 5
   },
   {
    "id": 12,
@@ -44,11 +54,6 @@
   {
    "id": 17,
    "name": "Buff allies as a wizard",
-   "completions": 1
-  },
-  {
-   "id": 20,
-   "name": "Beat different invasions",
    "completions": 1
   },
   {
@@ -99,11 +104,6 @@
   {
    "id": 18,
    "name": "Win as different factions",
-   "completions": 0
-  },
-  {
-   "id": 19,
-   "name": "Beat a custom invasion",
    "completions": 0
   },
   {
