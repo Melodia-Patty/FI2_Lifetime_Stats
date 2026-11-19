@@ -1,5 +1,5 @@
 {
- "updated": 1795111282102,
+ "updated": 1795114894109,
  "quests": [
   {
    "id": 24,
@@ -9,7 +9,7 @@
   {
    "id": 2,
    "name": "Kill bots as Recruit/Soldier",
-   "completions": 15
+   "completions": 16
   },
   {
    "id": 19,
@@ -27,14 +27,14 @@
    "completions": 8
   },
   {
-   "id": 8,
-   "name": "Kills without dying",
+   "id": 1,
+   "name": "Kill bots",
    "completions": 7
   },
   {
-   "id": 1,
-   "name": "Kill bots",
-   "completions": 5
+   "id": 8,
+   "name": "Kills without dying",
+   "completions": 7
   },
   {
    "id": 20,
