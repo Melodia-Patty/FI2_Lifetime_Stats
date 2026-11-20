@@ -1,5 +1,5 @@
 {
- "updated": 1795204887040,
+ "updated": 1795208496874,
  "quests": [
   {
    "id": 24,
@@ -17,13 +17,13 @@
    "completions": 19
   },
   {
-   "id": 3,
-   "name": "Hit headshots",
-   "completions": 15
-  },
-  {
    "id": 10,
    "name": "Beat waves",
+   "completions": 16
+  },
+  {
+   "id": 3,
+   "name": "Hit headshots",
    "completions": 15
   },
   {
@@ -54,7 +54,7 @@
   {
    "id": 15,
    "name": "Open leg boxes",
-   "completions": 2
+   "completions": 3
   },
   {
    "id": 4,
