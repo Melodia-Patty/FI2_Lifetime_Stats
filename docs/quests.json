@@ -1,5 +1,5 @@
 {
- "updated": 1795201315747,
+ "updated": 1795204887040,
  "quests": [
   {
    "id": 24,
@@ -9,7 +9,7 @@
   {
    "id": 2,
    "name": "Kill bots as Recruit/Soldier",
-   "completions": 19
+   "completions": 20
   },
   {
    "id": 19,
@@ -19,17 +19,17 @@
   {
    "id": 3,
    "name": "Hit headshots",
-   "completions": 14
-  },
-  {
-   "id": 1,
-   "name": "Kill bots",
-   "completions": 13
+   "completions": 15
   },
   {
    "id": 10,
    "name": "Beat waves",
-   "completions": 12
+   "completions": 15
+  },
+  {
+   "id": 1,
+   "name": "Kill bots",
+   "completions": 14
   },
   {
    "id": 8,
@@ -39,7 +39,7 @@
   {
    "id": 20,
    "name": "Beat different invasions",
-   "completions": 8
+   "completions": 9
   },
   {
    "id": 12,
