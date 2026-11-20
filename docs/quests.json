@@ -1,5 +1,5 @@
 {
- "updated": 1795143687593,
+ "updated": 1795147287746,
  "quests": [
   {
    "id": 24,
@@ -7,14 +7,14 @@
    "completions": 25
   },
   {
-   "id": 19,
-   "name": "Beat a custom invasion",
+   "id": 2,
+   "name": "Kill bots as Recruit/Soldier",
    "completions": 19
   },
   {
-   "id": 2,
-   "name": "Kill bots as Recruit/Soldier",
-   "completions": 18
+   "id": 19,
+   "name": "Beat a custom invasion",
+   "completions": 19
   },
   {
    "id": 3,
@@ -29,7 +29,7 @@
   {
    "id": 10,
    "name": "Beat waves",
-   "completions": 9
+   "completions": 11
   },
   {
    "id": 8,
