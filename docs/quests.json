@@ -1,5 +1,5 @@
 {
- "updated": 1795179688892,
+ "updated": 1795183298403,
  "quests": [
   {
    "id": 24,
@@ -29,7 +29,7 @@
   {
    "id": 10,
    "name": "Beat waves",
-   "completions": 11
+   "completions": 12
   },
   {
    "id": 8,
@@ -57,14 +57,14 @@
    "completions": 2
   },
   {
-   "id": 17,
-   "name": "Buff allies as a wizard",
+   "id": 4,
+   "name": "Kill bots with bows / crossbows / firearms",
    "completions": 1
   },
   {
-   "id": 4,
-   "name": "Kill bots with bows / crossbows / firearms",
-   "completions": 0
+   "id": 17,
+   "name": "Buff allies as a wizard",
+   "completions": 1
   },
   {
    "id": 5,
