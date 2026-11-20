@@ -1,5 +1,5 @@
 {
- "updated": 1795140085503,
+ "updated": 1795143687593,
  "quests": [
   {
    "id": 24,
@@ -7,18 +7,18 @@
    "completions": 25
   },
   {
+   "id": 19,
+   "name": "Beat a custom invasion",
+   "completions": 19
+  },
+  {
    "id": 2,
    "name": "Kill bots as Recruit/Soldier",
-   "completions": 17
+   "completions": 18
   },
   {
    "id": 3,
    "name": "Hit headshots",
-   "completions": 13
-  },
-  {
-   "id": 19,
-   "name": "Beat a custom invasion",
    "completions": 13
   },
   {
@@ -39,7 +39,7 @@
   {
    "id": 20,
    "name": "Beat different invasions",
-   "completions": 7
+   "completions": 8
   },
   {
    "id": 12,
@@ -54,7 +54,7 @@
   {
    "id": 15,
    "name": "Open leg boxes",
-   "completions": 1
+   "completions": 2
   },
   {
    "id": 17,
