@@ -1,5 +1,5 @@
 {
- "updated": 1795136502851,
+ "updated": 1795140085503,
  "quests": [
   {
    "id": 24,
@@ -12,19 +12,19 @@
    "completions": 17
   },
   {
+   "id": 3,
+   "name": "Hit headshots",
+   "completions": 13
+  },
+  {
    "id": 19,
    "name": "Beat a custom invasion",
    "completions": 13
   },
   {
-   "id": 3,
-   "name": "Hit headshots",
-   "completions": 12
-  },
-  {
    "id": 1,
    "name": "Kill bots",
-   "completions": 11
+   "completions": 12
   },
   {
    "id": 10,
@@ -49,7 +49,12 @@
   {
    "id": 13,
    "name": "Slay bosses",
-   "completions": 2
+   "completions": 3
+  },
+  {
+   "id": 15,
+   "name": "Open leg boxes",
+   "completions": 1
   },
   {
    "id": 17,
@@ -89,11 +94,6 @@
   {
    "id": 14,
    "name": "Slay end-game bosses",
-   "completions": 0
-  },
-  {
-   "id": 15,
-   "name": "Open leg boxes",
    "completions": 0
   },
   {
