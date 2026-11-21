@@ -1,5 +1,5 @@
 {
- "updated": 1795280493229,
+ "updated": 1795284081557,
  "quests": [
   {
    "id": 24,
@@ -32,14 +32,14 @@
    "completions": 16
   },
   {
+   "id": 20,
+   "name": "Beat different invasions",
+   "completions": 12
+  },
+  {
    "id": 8,
    "name": "Kills without dying",
    "completions": 11
-  },
-  {
-   "id": 20,
-   "name": "Beat different invasions",
-   "completions": 10
   },
   {
    "id": 13,
@@ -47,13 +47,13 @@
    "completions": 4
   },
   {
-   "id": 12,
-   "name": "Top5 points",
-   "completions": 3
-  },
-  {
    "id": 15,
    "name": "Open leg boxes",
+   "completions": 4
+  },
+  {
+   "id": 12,
+   "name": "Top5 points",
    "completions": 3
   },
   {
