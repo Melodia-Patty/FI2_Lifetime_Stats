@@ -1,5 +1,5 @@
 {
- "updated": 1795816892190,
+ "updated": 1795820528933,
  "quests": [
   {
    "id": 20,
@@ -39,7 +39,7 @@
   {
    "id": 11,
    "name": "Win games",
-   "completions": 20
+   "completions": 21
   },
   {
    "id": 19,
