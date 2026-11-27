@@ -1,10 +1,10 @@
 {
- "updated": 1795802492021,
+ "updated": 1795806096305,
  "quests": [
   {
    "id": 20,
    "name": "Beat different invasions",
-   "completions": 53
+   "completions": 54
   },
   {
    "id": 2,
@@ -54,7 +54,7 @@
   {
    "id": 23,
    "name": "Kill bots on Hard or Risky",
-   "completions": 13
+   "completions": 14
   },
   {
    "id": 13,
