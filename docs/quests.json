@@ -1,5 +1,5 @@
 {
- "updated": 1795795302739,
+ "updated": 1795798889027,
  "quests": [
   {
    "id": 20,
@@ -24,7 +24,7 @@
   {
    "id": 1,
    "name": "Kill bots",
-   "completions": 27
+   "completions": 28
   },
   {
    "id": 24,
@@ -32,13 +32,13 @@
    "completions": 25
   },
   {
-   "id": 11,
-   "name": "Win games",
-   "completions": 20
-  },
-  {
    "id": 15,
    "name": "Open leg boxes",
+   "completions": 22
+  },
+  {
+   "id": 11,
+   "name": "Win games",
    "completions": 20
   },
   {
@@ -52,14 +52,14 @@
    "completions": 14
   },
   {
+   "id": 23,
+   "name": "Kill bots on Hard or Risky",
+   "completions": 10
+  },
+  {
    "id": 13,
    "name": "Slay bosses",
    "completions": 8
-  },
-  {
-   "id": 23,
-   "name": "Kill bots on Hard or Risky",
-   "completions": 7
   },
   {
    "id": 12,
