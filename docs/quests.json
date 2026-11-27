@@ -1,5 +1,5 @@
 {
- "updated": 1795798889027,
+ "updated": 1795802492021,
  "quests": [
   {
    "id": 20,
@@ -54,7 +54,7 @@
   {
    "id": 23,
    "name": "Kill bots on Hard or Risky",
-   "completions": 10
+   "completions": 13
   },
   {
    "id": 13,
